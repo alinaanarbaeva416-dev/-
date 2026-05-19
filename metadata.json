@@ -1,0 +1,10 @@
+{
+  "name": "Заманбап Веб Касса",
+  "description": "Бардык жерде иштей турган заманбап жана ыңгайлуу веб-касса системасы. Сатууларды көзөмөлдөө, инвентаризация жана AI аналитикасы менен.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
