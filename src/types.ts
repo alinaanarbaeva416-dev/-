@@ -11,6 +11,7 @@ export interface Product {
 
 export interface CartItem extends Product {
   quantity: number;
+  discount?: number; // percentage, e.g., 5, 10, 15
 }
 
 export interface Transaction {
@@ -21,6 +22,8 @@ export interface Transaction {
   paymentMethod: 'cash' | 'card' | 'debt';
   debtorName?: string;
   cashierName: string;
+  taxAmount?: number;
+  taxRate?: number;
 }
 
 export interface Debt {
@@ -62,3 +65,17 @@ export interface Return {
 }
 
 export type View = 'pos' | 'dashboard' | 'inventory' | 'debts' | 'reports' | 'settings';
+
+export interface ProductMovement {
+  id: string;
+  date: string;
+  productId: string;
+  productName: string;
+  type: 'incoming' | 'outgoing' | 'sale' | 'return' | 'adjust';
+  quantity: number; // positive for intake/restock, negative for sale/disposal
+  prevStock: number;
+  newStock: number;
+  cashierName: string;
+  notes?: string;
+}
+
